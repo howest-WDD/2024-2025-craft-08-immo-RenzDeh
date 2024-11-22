@@ -78,119 +78,35 @@
 	</div>
 
 	<!-- locations -->
-	<div class="container c-section">
-		<h2 class="c-section__title">Locations</h2>
-		<p class="c-section__subtitle">Already found your ideal location?</p>
+	<div
+		class="container c-section">
+		<!-- todo: Roep All locations op en pas de title en subtitle aan.  -->
+		{% set allLocations = craft.entries.section('location').level(1).one() %}
+		{# {{dump(allLocations)}} #}
+		<h2 class="c-section__title">{{allLocations.title}}</h2>
+		<p class="c-section__subtitle">{{allLocations.subtext}}</p>
 
-		<div class="row justify-content-center c-section__content c-locations text-center">
-			<div class="col-12 col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class=" c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class=" c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Kortrijk
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Brussel
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Lokeren
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-12 col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Antwerpen
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="u-hidden col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="u-hidden col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-				</ul>
-			</div>
+		<div
+			class="row justify-content-center c-section__content c-locations text-center">
+			<!-- Roep alle children van All Locations op en loop ze over de lijst. Dit zijn de titels per kolom. Roep dan hiervan ook nog eens de children van op en laat deze de lijst vullen. -->
+			{% set regions = allLocations.children.all() %}
+			{% for region in regions %}
+				<div class="col-12 col-sm-3 col-lg-2">
+					<ul class="c-locations__list">
+						<h3>{{region.title}}</h3>
+						{% set cities = region.children.all() %}
+						{% for city in cities %}
+							<li class=" c-locations__list-item pb-2">
+								<a class="c-locations__link " href="{{city.url}}">
+									{{city.title}}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endfor %}
 
 		</div>
-
 	</div>
-
 
 {% endblock %}

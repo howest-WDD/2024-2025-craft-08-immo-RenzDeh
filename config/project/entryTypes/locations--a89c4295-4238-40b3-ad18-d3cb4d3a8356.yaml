@@ -1,0 +1,67 @@
+color: null
+fieldLayouts:
+  caa6c253-7ed0-4b3e-922b-6e4f8bc3785c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-11-22T10:35:01+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1831039f-d1d8-4acb-91ef-247e1ad7183c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-22T10:36:27+00:00'
+            elementCondition: null
+            fieldUid: e2e222ba-6107-4ebe-ba6f-c26cc3a40dd8 # Plain Text
+            handle: subtext
+            includeInCards: false
+            instructions: null
+            label: Subtext
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fbfa71fd-39b0-45fc-9b28-6557d39593ae
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a822d6b2-7d10-4213-9043-d637e1dc84a1
+        userCondition: null
+handle: locations
+hasTitleField: true
+icon: ''
+name: Locations
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
