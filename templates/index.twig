@@ -128,29 +128,32 @@
 
 									<!-- todo: loop hier over de waarden van de details van het pand -->
 									{# {{dump(house.details)}} #}
-									<div class="c-immo-card__details">
-										<div class="c-immo-card__icons">
-											<img src="{{url('img/icons/bed.svg')}}" alt="">
-											<p>
-												{{house.details[0].bedrooms}}
-												beds
-											</p>
+									{% for details in house.details %}
+										<div class="c-immo-card__details">
+											<div class="c-immo-card__icons">
+												<img src="{{url('img/icons/bed.svg')}}" alt="">
+												<p>
+													{{details.bedrooms}}
+													beds
+												</p>
+											</div>
+											<div class="c-immo-card__icons">
+												<img src="{{url('img/icons/bath.svg')}}" alt="">
+												<p>
+													{{details.bathrooms}}
+													baths
+												</p>
+											</div>
+											<div class="c-immo-card__icons">
+												<img src="{{url('img/icons/sqf.svg')}}" alt="">
+												<p>
+													{{details.size}}
+													m²
+												</p>
+											</div>
 										</div>
-										<div class="c-immo-card__icons">
-											<img src="{{url('img/icons/bath.svg')}}" alt="">
-											<p>
-												{{house.details[0].bathrooms}}
-												baths
-											</p>
-										</div>
-										<div class="c-immo-card__icons">
-											<img src="{{url('img/icons/sqf.svg')}}" alt="">
-											<p>
-												{{house.details[0].size}}
-												m²
-											</p>
-										</div>
-									</div>
+
+									{% endfor %}
 
 
 								</div>
@@ -298,10 +301,10 @@
 							</div>
 							<p>
 								Searches for multiplexes, property comparisons,
-																																																																																																																																																																																																																																																																		and the loan estimator. Works great. Lorem
-																																																																																																																																																																																																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																																																																																																		sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																																																																																																		dores.
+																																																																																																																																																																																																																																																																																																																																		and the loan estimator. Works great. Lorem
+																																																																																																																																																																																																																																																																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																																																																																																																																																																																																																																																																		sed do eiusmod tempor incididunt ut labore et
+																																																																																																																																																																																																																																																																																																																																		dores.
 							</p>
 
 						</div>
@@ -317,10 +320,10 @@
 							</div>
 							<p>
 								Searches for multiplexes, property comparisons,
-																																																																																																																																																																																																																																																																		and the loan estimator. Works great. Lorem
-																																																																																																																																																																																																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																																																																																																		sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																																																																																																		dores.
+																																																																																																																																																																																																																																																																																																																																		and the loan estimator. Works great. Lorem
+																																																																																																																																																																																																																																																																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																																																																																																																																																																																																																																																																		sed do eiusmod tempor incididunt ut labore et
+																																																																																																																																																																																																																																																																																																																																		dores.
 							</p>
 
 						</div>
@@ -336,10 +339,10 @@
 							</div>
 							<p>
 								Searches for multiplexes, property comparisons,
-																																																																																																																																																																																																																																																																		and the loan estimator. Works great. Lorem
-																																																																																																																																																																																																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																																																																																																		sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																																																																																																		dores.
+																																																																																																																																																																																																																																																																																																																																		and the loan estimator. Works great. Lorem
+																																																																																																																																																																																																																																																																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																																																																																																																																																																																																																																																																		sed do eiusmod tempor incididunt ut labore et
+																																																																																																																																																																																																																																																																																																																																		dores.
 							</p>
 
 						</div>
